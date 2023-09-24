@@ -9,6 +9,8 @@ func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta):
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 0.1

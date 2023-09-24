@@ -31,7 +31,7 @@ position = Vector2(240, 450)
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_gffv3")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="MobPath"]
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2(-3, 0)
 
 [connection signal="hit" from="Player" to="." method="game_over"]
