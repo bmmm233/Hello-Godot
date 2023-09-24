@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://6xufgen2vd16"]
+
+[ext_resource type="Texture2D" uid="uid://ct0rk4q8sw6je" path="res://art/enemyFlyingAlt_1.png" id="1_d5m08"]
+[ext_resource type="Script" path="res://mob.gd" id="1_wjrxh"]
+[ext_resource type="Texture2D" uid="uid://xvyw228fpj1g" path="res://art/enemyFlyingAlt_2.png" id="2_1oso4"]
+[ext_resource type="Texture2D" uid="uid://clbdxdnlea6x6" path="res://art/enemySwimming_1.png" id="3_lte1t"]
+[ext_resource type="Texture2D" uid="uid://bfxrbtlhmym8k" path="res://art/enemySwimming_2.png" id="4_qhklf"]
+[ext_resource type="Texture2D" uid="uid://ce3y4gpwx6y5m" path="res://art/enemyWalking_1.png" id="5_7fid7"]
+[ext_resource type="Texture2D" uid="uid://b4n0iy2f8qwrn" path="res://art/enemyWalking_2.png" id="6_6wo4x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0w5nj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d5m08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1oso4")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lte1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qhklf")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7fid7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6wo4x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j4k41"]
+radius = 34.0
+height = 98.0
+
+[node name="Mob" type="RigidBody2D"]
+position = Vector2(273, 201)
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_wjrxh")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_0w5nj")
+animation = &"walk"
+frame_progress = 0.171777
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j4k41")
+metadata/_edit_group_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+metadata/_edit_group_ = true
