@@ -13,14 +13,18 @@ func _process(delta):
 	pass
 
 
-func game_over():
-	$ScoreTimer.stop()
-	$MobTimer.stop()
-
 func new_game():
+	get_tree().call_group("mobs", "quene_free")
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	$HUD.update_score(score)
+	$HUD.show_message("准备")
+
+func game_over():
+	$ScoreTimer.stop()
+	$MobTimer.stop()
+	$HUD.show_game_over()
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
@@ -28,6 +32,7 @@ func _on_start_timer_timeout():
 
 func _on_score_timer_timeout():
 	score += 1
+	$HUD.update_score(score)
 
 func _on_mob_timer_timeout():
 	# 新建一个mob实例
@@ -43,10 +48,7 @@ func _on_mob_timer_timeout():
 	direction += randf_range(-PI / 4, PI / 4)
 	mob.rotation = direction
 	# 为敌人增加速度
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	var velocity = Vector2(randf_range(50.0, 150.0), 0.0)
 	mob.linear_velocity = velocity.rotated(direction)
 	# 通过添加生物到主场景来生成生物
 	add_child(mob)
-	
-	
-	
