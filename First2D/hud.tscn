@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmleepwerliuk"]
+[gd_scene load_steps=5 format=3 uid="uid://cmleepwerliuk"]
 
 [ext_resource type="Script" path="res://hud.gd" id="1_1xeg0"]
 [ext_resource type="FontFile" uid="uid://d1b5ev3smjnga" path="res://fonts/Xolonium-Regular.ttf" id="1_asoaq"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_rdea0"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_qebdo"]
+events = [SubResource("InputEventAction_rdea0")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_1xeg0")
@@ -51,6 +57,7 @@ offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_qebdo")
 text = "开始"
 
 [node name="MessageTimer" type="Timer" parent="."]
