@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cngkp5x8m1tx1"]
+
+[ext_resource type="PackedScene" uid="uid://q0qyf77gt6aa" path="res://sprites/bed.tscn" id="1_b8fj8"]
+
+[node name="Main" type="Node"]
+
+[node name="Sprite2D" parent="." instance=ExtResource("1_b8fj8")]
+position = Vector2(20, 24)
+hframes = 1
+vframes = 1
+frame = 0
+
+[node name="Sprite2D2" parent="." instance=ExtResource("1_b8fj8")]
+position = Vector2(-538, 206)
+
+[node name="Sprite2D3" parent="." instance=ExtResource("1_b8fj8")]
+position = Vector2(20, 24)
+hframes = 1
+vframes = 1
+frame = 0
+
+[node name="Sprite2D4" parent="." instance=ExtResource("1_b8fj8")]
+position = Vector2(26, 320)
+hframes = 1
+vframes = 1
+frame = 0

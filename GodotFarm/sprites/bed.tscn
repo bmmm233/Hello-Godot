@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://q0qyf77gt6aa"]
 
-[ext_resource type="Texture2D" uid="uid://cof514out2exj" path="res://art/Basic_Furniture.png" id="1_s6xse"]
+[ext_resource type="Texture2D" uid="uid://cof514out2exj" path="res://art/farm1/Basic_Furniture.png" id="1_s6xse"]
 
 [node name="Sprite2D" type="Sprite2D"]
 position = Vector2(18, 29)
