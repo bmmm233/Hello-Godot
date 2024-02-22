@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c55as11c5n613"]
+
+[ext_resource type="Texture2D" uid="uid://ddcfeys141a33" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="1_tbmto"]
+
+[node name="Field" type="Sprite2D"]
+
+[node name="HillsLU" type="Sprite2D" parent="."]
+position = Vector2(13.25, -44.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("1_tbmto")
+hframes = 8
+vframes = 5
+
+[node name="HillsRD" type="Sprite2D" parent="."]
+position = Vector2(39.25, -14.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("1_tbmto")
+hframes = 8
+vframes = 5
+frame = 9
+
+[node name="HillsRU" type="Sprite2D" parent="."]
+position = Vector2(39.25, -44.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("1_tbmto")
+hframes = 8
+vframes = 5
+frame = 1
+
+[node name="HillsLD" type="Sprite2D" parent="."]
+position = Vector2(13.25, -14.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("1_tbmto")
+hframes = 8
+vframes = 5
+frame = 8

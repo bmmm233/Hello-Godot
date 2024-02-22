@@ -1,26 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://cngkp5x8m1tx1"]
+[gd_scene load_steps=5 format=3 uid="uid://cngkp5x8m1tx1"]
 
-[ext_resource type="PackedScene" uid="uid://q0qyf77gt6aa" path="res://sprites/bed.tscn" id="1_b8fj8"]
+[ext_resource type="Texture2D" uid="uid://b65nr76vf3328" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="1_wu85p"]
+[ext_resource type="Texture2D" uid="uid://drc1g8hm78ihh" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="2_wf3mr"]
+[ext_resource type="Texture2D" uid="uid://c1k14wke277lf" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_i4gyn"]
+[ext_resource type="Texture2D" uid="uid://ddcfeys141a33" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="4_jf82e"]
 
 [node name="Main" type="Node"]
 
-[node name="Sprite2D" parent="." instance=ExtResource("1_b8fj8")]
-position = Vector2(20, 24)
-hframes = 1
-vframes = 1
-frame = 0
+[node name="BasicGrassBiomThings" type="Sprite2D" parent="."]
+position = Vector2(-132, -3)
+texture = ExtResource("1_wu85p")
 
-[node name="Sprite2D2" parent="." instance=ExtResource("1_b8fj8")]
-position = Vector2(-538, 206)
+[node name="BasicPlants" type="Sprite2D" parent="."]
+position = Vector2(-161, 61)
+texture = ExtResource("2_wf3mr")
 
-[node name="Sprite2D3" parent="." instance=ExtResource("1_b8fj8")]
-position = Vector2(20, 24)
-hframes = 1
-vframes = 1
-frame = 0
+[node name="BasicPlants2" type="Sprite2D" parent="."]
+position = Vector2(-161, 61)
+texture = ExtResource("2_wf3mr")
 
-[node name="Sprite2D4" parent="." instance=ExtResource("1_b8fj8")]
-position = Vector2(26, 320)
-hframes = 1
-vframes = 1
-frame = 0
+[node name="BasicPlants3" type="Sprite2D" parent="."]
+position = Vector2(-161, 61)
+texture = ExtResource("2_wf3mr")
+
+[node name="BasicToolsAndMeterials" type="Sprite2D" parent="."]
+position = Vector2(-165, 111)
+texture = ExtResource("3_i4gyn")
+
+[node name="Field" type="Sprite2D" parent="."]
+
+[node name="HillsLU" type="Sprite2D" parent="Field"]
+position = Vector2(13.25, -44.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("4_jf82e")
+hframes = 8
+vframes = 5
+
+[node name="HillsRD" type="Sprite2D" parent="Field"]
+position = Vector2(39.25, -14.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("4_jf82e")
+hframes = 8
+vframes = 5
+frame = 9
+
+[node name="HillsRU" type="Sprite2D" parent="Field"]
+position = Vector2(39.25, -44.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("4_jf82e")
+hframes = 8
+vframes = 5
+frame = 1
+
+[node name="HillsLD" type="Sprite2D" parent="Field"]
+position = Vector2(13.25, -14.2838)
+scale = Vector2(1.20455, 1.33784)
+texture = ExtResource("4_jf82e")
+hframes = 8
+vframes = 5
+frame = 8
