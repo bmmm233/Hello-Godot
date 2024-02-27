@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://cluu4e5mn6jnm"]
+
+[ext_resource type="Texture2D" uid="uid://dtyukwhhf4s8q" path="res://art/类土豆兄弟/creature-sheet.png" id="1_ss107"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_yryqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evnlg"]
+atlas = ExtResource("1_ss107")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxbja"]
+atlas = ExtResource("1_ss107")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5klc"]
+atlas = ExtResource("1_ss107")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mm86y"]
+atlas = ExtResource("1_ss107")
+region = Rect2(720, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8pe6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evnlg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxbja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5klc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mm86y")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vrmr"]
+radius = 62.0
+height = 190.0
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 20
+position = Vector2(972, 546)
+scale = Vector2(0.58, 0.58)
+script = ExtResource("1_yryqy")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 1)
+sprite_frames = SubResource("SpriteFrames_8pe6e")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame = 3
+frame_progress = 0.610129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+shape = SubResource("CapsuleShape2D_4vrmr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 0)
+zoom = Vector2(0.77, 0.77)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.29
+drag_right_margin = 0.29
+
+[node name="stop" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stop"]
+position = Vector2(8, 0)
+shape = SubResource("CapsuleShape2D_4vrmr")
+
+[connection signal="mouse_entered" from="stop" to="." method="_on_stop_mouse_entered"]
+[connection signal="mouse_exited" from="stop" to="." method="_on_stop_mouse_exited"]
