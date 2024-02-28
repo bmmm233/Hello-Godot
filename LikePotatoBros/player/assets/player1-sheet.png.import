@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca1vv4gcnnnyn"
-path="res://.godot/imported/player1.png-d6070694a5df8a05c04ea62852e1f745.ctex"
+uid="uid://djewcfivpkqur"
+path="res://.godot/imported/player1-sheet.png-9710042350906b2ff8cdfb00f639e3ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/类土豆兄弟/player1.png"
-dest_files=["res://.godot/imported/player1.png-d6070694a5df8a05c04ea62852e1f745.ctex"]
+source_file="res://player/assets/player1-sheet.png"
+dest_files=["res://.godot/imported/player1-sheet.png-9710042350906b2ff8cdfb00f639e3ee.ctex"]
 
 [params]
 

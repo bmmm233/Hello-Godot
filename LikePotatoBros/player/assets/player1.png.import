@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtyukwhhf4s8q"
-path="res://.godot/imported/creature-sheet.png-c4b8bf8d27ef9fb0460b8510b8dc0014.ctex"
+uid="uid://ca1vv4gcnnnyn"
+path="res://.godot/imported/player1.png-3b70573414e5bd7665edb0961f037063.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/类土豆兄弟/creature-sheet.png"
-dest_files=["res://.godot/imported/creature-sheet.png-c4b8bf8d27ef9fb0460b8510b8dc0014.ctex"]
+source_file="res://player/assets/player1.png"
+dest_files=["res://.godot/imported/player1.png-3b70573414e5bd7665edb0961f037063.ctex"]
 
 [params]
 

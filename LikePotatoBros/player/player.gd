@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@onready var playerAni = $AnimatedSprite2D
+@onready var playerAni = $playerAni
 
 #设置方向
 var dir = Vector2.ZERO
@@ -10,8 +10,33 @@ var can_Move = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	choosePlayer("player1")
 	pass # Replace with function body.
 
+func choosePlayer(type):
+	var player_path = "res://player/assets/"
+	playerAni.sprite_frames.clear_all()
+	var sprite_frame_custom = SpriteFrames.new()
+	sprite_frame_custom.set_animation_loop("default", true)
+	var texture_size = Vector2(960, 240)
+	var sprite_size = Vector2(240, 240)
+	# 获取雪碧图
+	var full_texture:Texture = load(player_path + "/" + type + "-sheet.png")
+	# 准备自动化，先分割，获取列数
+	var num_columns = int(texture_size.x / sprite_size.x)
+	var num_row = int(texture_size.y / sprite_size.y)
+	
+	for x in num_columns:
+		for y in num_row:
+			var frame = AtlasTexture.new()
+			frame.atlas = full_texture
+			frame.region = Rect2(Vector2(x, y) * sprite_size, sprite_size)
+			sprite_frame_custom.add_frame("default", frame)
+	
+	playerAni.sprite_frames = sprite_frame_custom
+	playerAni.play("default")
+	
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
