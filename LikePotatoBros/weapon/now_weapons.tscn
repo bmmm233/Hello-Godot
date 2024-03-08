@@ -11,3 +11,7 @@ script = ExtResource("1_n8kbo")
 [node name="weapon2" parent="." instance=ExtResource("1_susae")]
 
 [node name="weapon3" parent="." instance=ExtResource("1_susae")]
+
+[node name="weapon4" parent="." instance=ExtResource("1_susae")]
+
+[node name="weapon5" parent="." instance=ExtResource("1_susae")]
