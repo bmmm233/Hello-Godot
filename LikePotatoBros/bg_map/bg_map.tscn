@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1fi243yubh32"]
+[gd_scene load_steps=9 format=3 uid="uid://b1fi243yubh32"]
 
 [ext_resource type="Texture2D" uid="uid://pca3rgpsi0if" path="res://art/类土豆兄弟/bg.png" id="1_onsix"]
 [ext_resource type="Script" path="res://bg_map/bg_map.gd" id="1_yfsku"]
 [ext_resource type="PackedScene" uid="uid://cluu4e5mn6jnm" path="res://player/player.tscn" id="3_xkf8v"]
+[ext_resource type="Texture2D" uid="uid://x24450lumftd" path="res://art/类土豆兄弟/enemy.png" id="4_hg4i5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgjyg"]
 texture = ExtResource("1_onsix")
@@ -16,14 +17,17 @@ texture = ExtResource("1_onsix")
 14:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:0/0/physics_layer_0/angular_velocity = 0.0
 14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.625, -8, -0.875)
+14:0/0/custom_data_0 = true
 13:1/0 = 0
 13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:1/0/physics_layer_0/angular_velocity = 0.0
 13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -1.375, -8, -1.625, 8, -8, 8)
+13:1/0/custom_data_0 = true
 14:2/0 = 0
 14:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:2/0/physics_layer_0/angular_velocity = 0.0
 14:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2, 8, 2.75, 8, 8, -8, 8)
+14:2/0/custom_data_0 = true
 14:1/0 = 0
 14:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:1/0/physics_layer_0/angular_velocity = 0.0
@@ -31,6 +35,7 @@ texture = ExtResource("1_onsix")
 15:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:1/0/physics_layer_0/angular_velocity = 0.0
 15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.5, -8, 8, -8, 8, 8, 2.625, 8)
+15:1/0/custom_data_0 = true
 13:0/0 = 0
 13:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:0/0/physics_layer_0/angular_velocity = 0.0
@@ -47,18 +52,22 @@ texture = ExtResource("1_onsix")
 16:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:0/0/physics_layer_0/angular_velocity = 0.0
 16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.375, 3.25, 8, 1.875, 8, 8, 2.5, 8)
+16:0/0/custom_data_0 = true
 16:1/0 = 0
 16:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 16:1/0/physics_layer_0/angular_velocity = 0.0
 16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.5, -8, 8, -8, 8, 8, 8, -0.25)
+16:1/0/custom_data_0 = true
 17:1/0 = 0
 17:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:1/0/physics_layer_0/angular_velocity = 0.0
 17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.875, -8, -2.5, -1.25, -8, -1.25)
+17:1/0/custom_data_0 = true
 17:0/0 = 0
 17:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:0/0/physics_layer_0/angular_velocity = 0.0
 17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.75, -3.25, 2.5, -0.25, 8, -8, 8)
+17:0/0/custom_data_0 = true
 9:3/0 = 0
 9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:3/0/physics_layer_0/angular_velocity = 0.0
@@ -73,8 +82,25 @@ texture = ExtResource("1_onsix")
 8:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_ee6r0"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+custom_data_layer_0/name = "isWall"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_mgjyg")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64lll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hg4i5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8us88"]
+size = Vector2(200, 200)
 
 [node name="bg_map" type="Node2D"]
 script = ExtResource("1_yfsku")
@@ -94,3 +120,17 @@ layer_2/tile_data = PackedInt32Array(65535, 983040, 1, 131071, 983040, 1, 196607
 
 [node name="player" parent="." instance=ExtResource("3_xkf8v")]
 position = Vector2(677, 745)
+
+[node name="enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
+z_index = 10
+position = Vector2(985, 625)
+scale = Vector2(0.6, 0.6)
+collision_layer = 8
+collision_mask = 10
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy"]
+sprite_frames = SubResource("SpriteFrames_64lll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
+shape = SubResource("RectangleShape2D_8us88")

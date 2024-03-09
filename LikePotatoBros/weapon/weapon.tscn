@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://rrkkbdptjujm"]
+[gd_scene load_steps=7 format=3 uid="uid://rrkkbdptjujm"]
 
 [ext_resource type="Texture2D" uid="uid://dige7wuti18n3" path="res://weapon/assets/weapon1.png" id="1_3ticj"]
 [ext_resource type="Script" path="res://weapon/weapon.gd" id="1_ovl0l"]
@@ -24,6 +24,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqkfq"]
+radius = 1316.07
+
 [node name="weapon" type="Node2D"]
 script = ExtResource("1_ovl0l")
 
@@ -38,4 +41,13 @@ position = Vector2(108, 7)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="shoot_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoot_area"]
+shape = SubResource("CircleShape2D_aqkfq")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="shoot_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="shoot_area" to="." method="_on_area_2d_body_exited"]

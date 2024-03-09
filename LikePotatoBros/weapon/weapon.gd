@@ -3,10 +3,13 @@ extends Node2D
 @onready var weaponAni = $AnimatedSprite2D
 @onready var shoot_pos = $shoot_pos
 @onready var timer = $Timer
+@onready var bullet = preload("res://bullet/bullet.tscn")
 
 var bullet_shoot_time = 0.5
 var bullet_speed = 2000
 var bullet_hurt = 1
+
+var attack_enemies = []
 
 const weapon_level = {
 	level1 = "#b0c3d9",
@@ -27,8 +30,30 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if attack_enemies.size() != 0:
+		self.look_at(attack_enemies[0].position)
+	else:
+		rotation_degrees = 0
 	pass
 
-
 func _on_timer_timeout():
+	var now_bullet = bullet.instantiate()
+	if attack_enemies.size() != 0:
+		now_bullet.speed = bullet_speed
+		now_bullet.hurt = bullet_hurt
+		now_bullet.position = shoot_pos.global_position
+		now_bullet.dir = (attack_enemies[0].global_position - now_bullet.position).normalized()
+	get_tree().root.add_child(now_bullet)
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy") and !attack_enemies.has(body):
+		attack_enemies.append(body)
+	pass # Replace with function body.
+
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("enemy") and attack_enemies.has(body):
+		attack_enemies.remove_at(attack_enemies.find(body))
 	pass # Replace with function body.
