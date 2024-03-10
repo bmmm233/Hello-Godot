@@ -42,6 +42,7 @@ position = Vector2(108, 7)
 autostart = true
 
 [node name="shoot_area" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 8
 

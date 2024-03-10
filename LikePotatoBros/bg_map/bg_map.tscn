@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1fi243yubh32"]
+[gd_scene load_steps=7 format=3 uid="uid://b1fi243yubh32"]
 
 [ext_resource type="Texture2D" uid="uid://pca3rgpsi0if" path="res://art/类土豆兄弟/bg.png" id="1_onsix"]
 [ext_resource type="Script" path="res://bg_map/bg_map.gd" id="1_yfsku"]
 [ext_resource type="PackedScene" uid="uid://cluu4e5mn6jnm" path="res://player/player.tscn" id="3_xkf8v"]
-[ext_resource type="Texture2D" uid="uid://x24450lumftd" path="res://art/类土豆兄弟/enemy.png" id="4_hg4i5"]
+[ext_resource type="PackedScene" uid="uid://6pte6yuih5f8" path="res://enemy/now_enemies.tscn" id="4_rywft"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgjyg"]
 texture = ExtResource("1_onsix")
@@ -88,24 +88,10 @@ custom_data_layer_0/name = "isWall"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_mgjyg")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_64lll"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_hg4i5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8us88"]
-size = Vector2(200, 200)
-
 [node name="bg_map" type="Node2D"]
 script = ExtResource("1_yfsku")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["map"]]
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_ee6r0")
 format = 2
@@ -121,16 +107,6 @@ layer_2/tile_data = PackedInt32Array(65535, 983040, 1, 131071, 983040, 1, 196607
 [node name="player" parent="." instance=ExtResource("3_xkf8v")]
 position = Vector2(677, 745)
 
-[node name="enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
-z_index = 10
-position = Vector2(985, 625)
-scale = Vector2(0.6, 0.6)
-collision_layer = 8
-collision_mask = 10
-metadata/_edit_group_ = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy"]
-sprite_frames = SubResource("SpriteFrames_64lll")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy"]
-shape = SubResource("RectangleShape2D_8us88")
+[node name="now_enemies" parent="." instance=ExtResource("4_rywft")]
+position = Vector2(459, 925)
+scale = Vector2(0.58, 0.58)

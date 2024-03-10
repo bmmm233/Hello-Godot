@@ -16,7 +16,12 @@ func _process(delta):
 
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body is TileMap:
+	if body.is_in_group("enemy"):
+		body.hp -= 1
+		if body.hp <= 0:
+			body.queue_free()
+		self.queue_free()
+	elif body is TileMap:
 		var coords = body.get_coords_for_body_rid(body_rid)
 		var tile_data = body.get_cell_tile_data(2, coords)
 		var isWall = tile_data.get_custom_data("isWall")
