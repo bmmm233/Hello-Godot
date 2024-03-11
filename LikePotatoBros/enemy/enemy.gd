@@ -18,3 +18,21 @@ func _process(delta):
 		velocity = dir * speed
 		move_and_slide()
 	pass
+
+func enemy_hurt(hurt):
+	self.hp -= hurt
+	
+	# 添加受伤动画
+	GameMain.animation_scene_obj.run_animation({
+		"box": self,
+		"ani_name": "enemy_hurt",
+		"position": Vector2(0, 0),
+		"scale": Vector2(1, 1)
+	})
+	
+	if self.hp <= 0:
+		enemy_dead()
+
+func enemy_dead():
+	self.queue_free()
+	pass
