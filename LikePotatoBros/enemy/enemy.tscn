@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bp7ba2b8bbvjp"]
+[gd_scene load_steps=10 format=3 uid="uid://bp7ba2b8bbvjp"]
 
 [ext_resource type="Texture2D" uid="uid://dqu22vsh10m5h" path="res://enemy/assets/enemy-sheet.png" id="1_17fr7"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_ev4iv"]
+[ext_resource type="Material" uid="uid://bhwa5g6j6840i" path="res://enemy/flash.tres" id="2_q5u02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3fnk"]
 size = Vector2(93, 135)
@@ -55,6 +56,7 @@ position = Vector2(3.5, 12.5)
 shape = SubResource("RectangleShape2D_d3fnk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_q5u02")
 sprite_frames = SubResource("SpriteFrames_kau4s")
 autoplay = "default"
 frame = 3

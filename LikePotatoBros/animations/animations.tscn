@@ -242,6 +242,7 @@ animations = [{
 }]
 
 [node name="animations" type="Node2D"]
+z_index = 15
 script = ExtResource("1_2j830")
 
 [node name="all_animation" type="AnimatedSprite2D" parent="."]

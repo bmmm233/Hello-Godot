@@ -43,7 +43,9 @@ func _on_timer_timeout():
 		now_bullet.hurt = bullet_hurt
 		now_bullet.position = shoot_pos.global_position
 		now_bullet.dir = (attack_enemies[0].global_position - now_bullet.position).normalized()
-	get_tree().root.add_child(now_bullet)
+		get_tree().root.add_child(now_bullet)
+	else:
+		now_bullet.free()
 	pass # Replace with function body.
 
 
