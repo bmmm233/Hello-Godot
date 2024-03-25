@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1fi243yubh32"]
+[gd_scene load_steps=8 format=3 uid="uid://b1fi243yubh32"]
 
 [ext_resource type="Texture2D" uid="uid://pca3rgpsi0if" path="res://art/类土豆兄弟/bg.png" id="1_onsix"]
 [ext_resource type="Script" path="res://bg_map/bg_map.gd" id="1_yfsku"]
 [ext_resource type="PackedScene" uid="uid://cluu4e5mn6jnm" path="res://player/player.tscn" id="3_xkf8v"]
 [ext_resource type="PackedScene" uid="uid://6pte6yuih5f8" path="res://enemy/now_enemies.tscn" id="4_rywft"]
+[ext_resource type="PackedScene" uid="uid://dmwsmgfda34bv" path="res://ui/game_ui.tscn" id="5_gnfnr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mgjyg"]
 texture = ExtResource("1_onsix")
@@ -110,3 +111,5 @@ position = Vector2(677, 745)
 [node name="now_enemies" parent="." instance=ExtResource("4_rywft")]
 position = Vector2(459, 925)
 scale = Vector2(0.58, 0.58)
+
+[node name="game_ui" parent="." instance=ExtResource("5_gnfnr")]

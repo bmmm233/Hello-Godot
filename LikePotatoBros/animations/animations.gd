@@ -18,6 +18,8 @@ options.position 动画生成坐标
 options.scale 动画缩放等级
 '''
 func run_animation(options):
+	if !options.has("box"):
+		options.box = GameMain.duplicate_node
 	var ani_temp = self.duplicate()
 	options.box.add_child(ani_temp)
 	ani_temp.show()

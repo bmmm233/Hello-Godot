@@ -36,10 +36,15 @@ func enemy_hurt(hurt):
 func enemy_dead():
 	# 添加死亡动画
 	GameMain.animation_scene_obj.run_animation({
-		"box": GameMain.duplicate_node,
 		"ani_name": "enemy_dead",
 		"position": self.global_position,
 		"scale": Vector2(0.7, 0.7)
+	})
+	# 添加掉落物
+	GameMain.drop_item_scene_obj.gen_drop_item({
+		"ani_name": "gold",
+		"position": self.global_position,
+		"scale": Vector2(3, 3)
 	})
 	self.queue_free()
 	pass

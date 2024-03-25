@@ -7,6 +7,14 @@ var dir = Vector2.ZERO
 var speed = 600
 var flip = false
 var can_Move = true
+var stop = false
+
+var now_hp = 100
+var max_hp = 100
+var max_exp = 5
+var now_exp = 0
+var level = 1
+var gold = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +25,7 @@ func choosePlayer(type):
 	var player_path = "res://player/assets/"
 	playerAni.sprite_frames.clear_all()
 	var sprite_frame_custom = SpriteFrames.new()
-	sprite_frame_custom.set_animation_loop("default", true)
+	#sprite_frame_custom.set_animation_loop("default", true)
 	var texture_size = Vector2(960, 240)
 	var sprite_size = Vector2(240, 240)
 	# 获取雪碧图
@@ -67,3 +75,21 @@ func _on_stop_mouse_entered():
 
 func _on_stop_mouse_exited():
 	can_Move = true # Replace with function body.
+
+
+func _on_drop_item_area_body_entered(body):
+	if body.is_in_group("drop_item"):
+		self.now_exp += 1
+		if self.now_exp >= self.max_exp:
+			self.level += 1
+			self.now_exp = 0
+		body.canMoving = true
+	pass # Replace with function body.
+
+
+func _on_stop_body_entered(body):
+	if body.is_in_group("enemy"):
+		self.now_hp -= 1
+	if body.is_in_group("drop_item"):
+		body.queue_free()
+	pass # Replace with function body.
