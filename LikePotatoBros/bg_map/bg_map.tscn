@@ -113,3 +113,5 @@ position = Vector2(459, 925)
 scale = Vector2(0.58, 0.58)
 
 [node name="game_ui" parent="." instance=ExtResource("5_gnfnr")]
+
+[connection signal="round_stop" from="game_ui" to="." method="_on_game_ui_round_stop"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gh0wf5wktu66"
-path="res://.godot/imported/max_hp.png-2944223ed6cdabff5feef164eeed2be4.ctex"
+uid="uid://wojd7u0upccr"
+path="res://.godot/imported/exp_get.png-3255598e1a4d7c2c73f32cd9eca80178.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/类土豆兄弟/max_hp.png"
-dest_files=["res://.godot/imported/max_hp.png-2944223ed6cdabff5feef164eeed2be4.ctex"]
+source_file="res://scenes/scene_update/assets/exp_get.png"
+dest_files=["res://.godot/imported/exp_get.png-3255598e1a4d7c2c73f32cd9eca80178.ctex"]
 
 [params]
 

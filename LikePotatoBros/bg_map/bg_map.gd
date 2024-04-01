@@ -21,3 +21,8 @@ func random_tile():
 			tilemap.set_cell(1,cell,0,Vector2i(18,1))
 		if num <= 1:
 			tilemap.set_cell(1,cell,0,Vector2i(9,3))
+
+
+func _on_game_ui_round_stop():
+	print("round_end")
+	pass # Replace with function body.

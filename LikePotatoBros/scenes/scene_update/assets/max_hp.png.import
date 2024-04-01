@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxiif00x3yf5"
-path="res://.godot/imported/basic_hurt.png-7d07f4845000b97abd0a3660a12c88ca.ctex"
+uid="uid://gh0wf5wktu66"
+path="res://.godot/imported/max_hp.png-e14497298a426200dbbaba14d12a9499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/类土豆兄弟/basic_hurt.png"
-dest_files=["res://.godot/imported/basic_hurt.png-7d07f4845000b97abd0a3660a12c88ca.ctex"]
+source_file="res://scenes/scene_update/assets/max_hp.png"
+dest_files=["res://.godot/imported/max_hp.png-e14497298a426200dbbaba14d12a9499.ctex"]
 
 [params]
 

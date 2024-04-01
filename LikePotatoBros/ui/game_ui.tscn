@@ -156,3 +156,47 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="gold/Control"]
 scale = Vector2(3.25, 3.25)
 texture = ExtResource("1_86dwr")
+
+[node name="count_down" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = -20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="now_round" type="Label" parent="count_down"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 3.0
+offset_right = 60.0
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "第1波"
+horizontal_alignment = 1
+
+[node name="time_show" type="Label" parent="count_down"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = 57.0
+offset_right = 23.0
+offset_bottom = 112.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "30"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="count_down"]
+
+[connection signal="timeout" from="count_down/Timer" to="." method="_on_timer_timeout"]

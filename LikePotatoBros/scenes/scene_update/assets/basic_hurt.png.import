@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp2f3vn8hgr6d"
-path="res://.godot/imported/gold_get.png-363ea0f34b13cd26be0d476cec3bb801.ctex"
+uid="uid://dmxiif00x3yf5"
+path="res://.godot/imported/basic_hurt.png-1fcdb632e8634cabd5ce9cd375209658.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/类土豆兄弟/gold_get.png"
-dest_files=["res://.godot/imported/gold_get.png-363ea0f34b13cd26be0d476cec3bb801.ctex"]
+source_file="res://scenes/scene_update/assets/basic_hurt.png"
+dest_files=["res://.godot/imported/basic_hurt.png-1fcdb632e8634cabd5ce9cd375209658.ctex"]
 
 [params]
 
