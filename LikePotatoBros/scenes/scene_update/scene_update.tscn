@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp08hib3pvd1s"]
+[gd_scene load_steps=7 format=3 uid="uid://bp08hib3pvd1s"]
 
+[ext_resource type="Script" path="res://scenes/scene_update/scene_update.gd" id="1_d63vb"]
 [ext_resource type="Texture2D" uid="uid://dmxiif00x3yf5" path="res://scenes/scene_update/assets/basic_hurt.png" id="1_fcqfe"]
 [ext_resource type="Texture2D" uid="uid://b8s2b7hmjt44y" path="res://drop_items/assets/gold.png" id="2_0pamx"]
 
@@ -15,6 +16,7 @@ content_margin_left = 10.0
 bg_color = Color(0.882353, 0.882353, 0.882353, 1)
 
 [node name="scene_update" type="CanvasLayer"]
+script = ExtResource("1_d63vb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -109,225 +111,6 @@ bbcode_enabled = true
 text = "[color=green]+3[/color] 基础伤害"
 fit_content = true
 
-[node name="attr_item_template2" type="Panel" parent="attr_item_choose"]
-custom_minimum_size = Vector2(0, 280)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="attr_item_choose/attr_item_template2"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -66.0
-offset_right = -19.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_rq0oq")
-text = "选择"
-
-[node name="MarginContainer" type="MarginContainer" parent="attr_item_choose/attr_item_template2"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 148.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="attr_item_choose/attr_item_template2/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="TextureRect" type="TextureRect" parent="attr_item_choose/attr_item_template2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_fcqfe")
-expand_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="attr_item_choose/attr_item_template2/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="attr_item_choose/attr_item_template2/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "攻击力"
-
-[node name="Label2" type="Label" parent="attr_item_choose/attr_item_template2/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.968627, 0.956863, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "升级"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="attr_item_choose/attr_item_template2"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = 9.0
-offset_right = -21.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[color=green]+3[/color] 基础伤害"
-fit_content = true
-
-[node name="attr_item_template3" type="Panel" parent="attr_item_choose"]
-custom_minimum_size = Vector2(0, 280)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="attr_item_choose/attr_item_template3"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -66.0
-offset_right = -19.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_rq0oq")
-text = "选择"
-
-[node name="MarginContainer" type="MarginContainer" parent="attr_item_choose/attr_item_template3"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 148.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="attr_item_choose/attr_item_template3/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="TextureRect" type="TextureRect" parent="attr_item_choose/attr_item_template3/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_fcqfe")
-expand_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="attr_item_choose/attr_item_template3/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="attr_item_choose/attr_item_template3/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "攻击力"
-
-[node name="Label2" type="Label" parent="attr_item_choose/attr_item_template3/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.968627, 0.956863, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "升级"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="attr_item_choose/attr_item_template3"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = 9.0
-offset_right = -21.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[color=green]+3[/color] 基础伤害"
-fit_content = true
-
-[node name="attr_item_template4" type="Panel" parent="attr_item_choose"]
-custom_minimum_size = Vector2(0, 280)
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Button" type="Button" parent="attr_item_choose/attr_item_template4"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 19.0
-offset_top = -66.0
-offset_right = -19.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_rq0oq")
-text = "选择"
-
-[node name="MarginContainer" type="MarginContainer" parent="attr_item_choose/attr_item_template4"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 148.0
-grow_horizontal = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="HBoxContainer" type="HBoxContainer" parent="attr_item_choose/attr_item_template4/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 20
-
-[node name="TextureRect" type="TextureRect" parent="attr_item_choose/attr_item_template4/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_fcqfe")
-expand_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="attr_item_choose/attr_item_template4/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Label" type="Label" parent="attr_item_choose/attr_item_template4/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 35
-text = "攻击力"
-
-[node name="Label2" type="Label" parent="attr_item_choose/attr_item_template4/MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.968627, 0.956863, 0, 1)
-theme_override_font_sizes/font_size = 30
-text = "升级"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="attr_item_choose/attr_item_template4"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_top = 9.0
-offset_right = -21.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 25
-bbcode_enabled = true
-text = "[color=green]+3[/color] 基础伤害"
-fit_content = true
-
 [node name="update" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
@@ -388,19 +171,19 @@ theme_override_constants/margin_right = 20
 [node name="ScrollContainer" type="ScrollContainer" parent="attr/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="attr/MarginContainer/ScrollContainer"]
+[node name="attr_list" type="VBoxContainer" parent="attr/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="attr/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="attr_template" type="HBoxContainer" parent="attr/MarginContainer/ScrollContainer/attr_list"]
 layout_mode = 2
 
-[node name="name" type="Label" parent="attr/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="name" type="Label" parent="attr/MarginContainer/ScrollContainer/attr_list/attr_template"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "最大血量"
 
-[node name="value" type="Label" parent="attr/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="value" type="Label" parent="attr/MarginContainer/ScrollContainer/attr_list/attr_template"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 1, 0, 1)
