@@ -15,7 +15,7 @@ var now_round_num = 0:
 	set(val):
 		now_round_num = val
 		now_round.text = "第%s波" % [str(val)]
-var round_time = 10:
+var round_time = 3:
 	set(val):
 		round_time = val
 		time_show.text = str(val)
@@ -28,7 +28,7 @@ func _ready():
 
 func _init_round():
 	now_round_num += 1
-	round_time = 10
+	round_time = 3
 	timer.start()
 	pass
 

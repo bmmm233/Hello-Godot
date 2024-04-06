@@ -16,6 +16,7 @@ content_margin_left = 10.0
 bg_color = Color(0.882353, 0.882353, 0.882353, 1)
 
 [node name="scene_update" type="CanvasLayer"]
+process_mode = 2
 script = ExtResource("1_d63vb")
 
 [node name="ColorRect" type="ColorRect" parent="."]

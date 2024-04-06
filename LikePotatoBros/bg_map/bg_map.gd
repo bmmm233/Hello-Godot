@@ -25,4 +25,6 @@ func random_tile():
 
 func _on_game_ui_round_stop():
 	print("round_end")
+	get_tree().paused = true
+	$scene_update.init()
 	pass # Replace with function body.

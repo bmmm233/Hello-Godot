@@ -89,10 +89,10 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	attr_item_template.hide()
 	attr_template.hide()
-	init()
 	pass # Replace with function body.
 	
 func init():
+	self.show()
 	# 属性加成选择
 	gen_attr_choose()
 	# 加载角色属性
@@ -100,7 +100,6 @@ func init():
 	pass
 
 func gen_attr_choose():
-	print("hello")
 	for item in attr_item_choose.get_children():
 		if item.is_visible():
 			attr_item_choose.remove_child(item)
@@ -134,4 +133,19 @@ func choose_attr(attr_info):
 	pass
 
 func load_player_attr():
+	for item in attr_list.get_children():
+		if item.is_visible():
+			attr_list.remove_child(item)
+			item.queue_free()
+	# 获取player对象。所继承的对象
+	var prop_list = player.get_script().get_base_script().get_script_property_list()
+	for prop in prop_list:
+		if prop.name.rfind(".gd") == -1:
+			var attr_item = attr_template.duplicate()
+			attr_item.show()
+			
+			attr_item.get_node("name").text = prop.name
+			attr_item.get_node("value").text = str(player[prop.name])
+			
+			attr_list.add_child(attr_item)
 	pass
