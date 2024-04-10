@@ -84,10 +84,13 @@ func _on_stop_mouse_exited():
 
 func _on_drop_item_area_body_entered(body):
 	if body.is_in_group("drop_item"):
-		self.now_exp += 1
+		self.gold += (1 + self.gold_get)
+		self.now_exp += (1 + self.exp_get)
 		if self.now_exp >= self.max_exp:
 			self.level += 1
 			self.now_exp = 0
+			self.level_add_num += 1
+			self.max_exp *= 2
 		body.canMoving = true
 	pass # Replace with function body.
 

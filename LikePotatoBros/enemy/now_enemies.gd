@@ -6,9 +6,6 @@ var tilemap = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	tilemap = get_tree().get_first_node_in_group("map")
-	var enemy_1 = enemy.instantiate()
-	enemy_1.position = Vector2(8,8) * Vector2(6,6)
-	self.add_child(enemy_1)
 	pass # Replace with function body.
 
 
@@ -21,8 +18,13 @@ func _on_timer_timeout():
 	var ran = RandomNumberGenerator.new()
 	var num = ran.randi_range(0, len(tilemap.get_used_cells(0))-1)
 	var local_position = tilemap.map_to_local(tilemap.get_used_cells(0)[num])
-	print((local_position - Vector2(8, 8))/16)
 	var enemyTemp = enemy.instantiate()
 	enemyTemp.position = local_position * Vector2(6, 6)
 	self.add_child(enemyTemp)
 	pass # Replace with function body.
+	
+func delete_enemies():
+	for n in self.get_children():
+		if n.name != 'Timer':
+			self.remove_child(n)
+			n.queue_free()

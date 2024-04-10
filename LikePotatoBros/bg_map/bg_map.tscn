@@ -110,8 +110,6 @@ layer_2/tile_data = PackedInt32Array(65535, 983040, 1, 131071, 983040, 1, 196607
 position = Vector2(677, 745)
 
 [node name="now_enemies" parent="." instance=ExtResource("4_rywft")]
-position = Vector2(459, 925)
-scale = Vector2(0.58, 0.58)
 
 [node name="game_ui" parent="." instance=ExtResource("5_gnfnr")]
 
@@ -119,3 +117,4 @@ scale = Vector2(0.58, 0.58)
 visible = false
 
 [connection signal="round_stop" from="game_ui" to="." method="_on_game_ui_round_stop"]
+[connection signal="continue_game" from="scene_update" to="." method="_on_scene_update_continue_game"]

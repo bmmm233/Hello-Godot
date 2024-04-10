@@ -210,3 +210,6 @@ offset_right = 1880.0
 offset_bottom = 980.0
 theme_override_font_sizes/font_size = 30
 text = "继续"
+
+[connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

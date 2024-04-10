@@ -20,8 +20,8 @@ height = 14.0
 
 [node name="drop_items" type="CharacterBody2D" groups=["drop_item"]]
 z_index = 13
-collision_layer = 16
-collision_mask = 16
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_ygxky")
 
 [node name="all_animations" type="AnimatedSprite2D" parent="."]

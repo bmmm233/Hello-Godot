@@ -13,6 +13,7 @@ bg_color = Color(0.839216, 0.270588, 0.25098, 1)
 bg_color = Color(0.807843, 0.709804, 0.129412, 1)
 
 [node name="game_ui" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_txfx0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

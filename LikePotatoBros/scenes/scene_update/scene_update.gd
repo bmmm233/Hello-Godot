@@ -12,6 +12,8 @@ extends CanvasLayer
 
 var player
 
+signal continue_game
+
 const ATTR_GROUP = {
 	"attack": {
 		"name": "攻击力",
@@ -93,8 +95,18 @@ func _ready():
 	
 func init():
 	self.show()
-	# 属性加成选择
-	gen_attr_choose()
+	attr_item_choose.show()
+	refresh.show()
+	update.show()
+	continue_btn.show()
+	if player.level_add_num > 0:
+		# 属性加成选择
+		gen_attr_choose()
+		continue_btn.hide()
+	else:
+		attr_item_choose.hide()
+		refresh.hide()
+		update.hide()
 	# 加载角色属性
 	load_player_attr()
 	pass
@@ -128,8 +140,16 @@ func gen_attr_choose():
 	pass
 
 func choose_attr(attr_info):
-	#player[attr_info.key] += attr_info.val
+	player[attr_info.key] += attr_info.val
 	gen_attr_choose()
+	player.level_add_num -= 1
+	if player.level_add_num > 0:
+		gen_attr_choose()
+	else:
+		attr_item_choose.hide()
+		refresh.hide()
+		continue_btn.show()
+	load_player_attr()
 	pass
 
 func load_player_attr():
@@ -144,8 +164,19 @@ func load_player_attr():
 			var attr_item = attr_template.duplicate()
 			attr_item.show()
 			
-			attr_item.get_node("name").text = prop.name
+			attr_item.get_node("name").text = tr(prop.name)
 			attr_item.get_node("value").text = str(player[prop.name])
 			
 			attr_list.add_child(attr_item)
 	pass
+
+func _on_refresh_pressed():
+	if player.gold >= 2:
+		gen_attr_choose()
+		player.gold -= 2
+	pass # Replace with function body.
+
+
+func _on_continue_pressed():
+	emit_signal("continue_game")
+	pass # Replace with function body.

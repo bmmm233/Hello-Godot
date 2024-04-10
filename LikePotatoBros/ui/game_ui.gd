@@ -28,7 +28,7 @@ func _ready():
 
 func _init_round():
 	now_round_num += 1
-	round_time = 3
+	round_time = 15
 	timer.start()
 	pass
 

@@ -27,6 +27,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/player.en.translation", "res://localization/player.zh.translation")
+
 [layer_names]
 
 2d_physics/layer_1="player"

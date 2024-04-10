@@ -24,7 +24,20 @@ func random_tile():
 
 
 func _on_game_ui_round_stop():
-	print("round_end")
 	get_tree().paused = true
 	$scene_update.init()
+	pass # Replace with function body.
+
+
+func _on_scene_update_continue_game():
+	get_tree().paused = false
+	$scene_update.hide()
+	$player.now_hp = $player.max_hp
+	$game_ui._init_round()
+	var drop_items = get_tree().get_nodes_in_group("drop_item")
+	for drop_item in drop_items:
+		if drop_item.get_collision_layer_value(5):
+			self.remove_child(drop_item)
+			drop_item.queue_free()
+	$now_enemies.delete_enemies()
 	pass # Replace with function body.

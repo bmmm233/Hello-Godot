@@ -3,7 +3,7 @@ extends CharacterBody2D
 var dir = Vector2.ZERO
 var speed = 200
 var target = null
-var hp = 6
+var hp = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,7 @@ func _process(delta):
 	pass
 
 func enemy_hurt(hurt):
-	self.hp -= hurt
+	self.hp -= ((hurt + target.basic_hurt) * target.basic_hurt_multiple)
 	enemy_flash()
 	# 添加受伤动画
 	GameMain.animation_scene_obj.run_animation({
