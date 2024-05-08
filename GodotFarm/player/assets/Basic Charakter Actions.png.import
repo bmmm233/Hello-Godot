@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://clrjnul176plh"
-path="res://.godot/imported/Basic Charakter Actions.png-b7d78b7a2461ae6586f85324121e6cdd.ctex"
+path="res://.godot/imported/Basic Charakter Actions.png-5a0aa8190acbdd4c3064f91cd829104e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png"
-dest_files=["res://.godot/imported/Basic Charakter Actions.png-b7d78b7a2461ae6586f85324121e6cdd.ctex"]
+source_file="res://player/assets/Basic Charakter Actions.png"
+dest_files=["res://.godot/imported/Basic Charakter Actions.png-5a0aa8190acbdd4c3064f91cd829104e.ctex"]
 
 [params]
 

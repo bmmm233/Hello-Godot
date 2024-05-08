@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhyu7cvah7oii"
-path="res://.godot/imported/Basic Charakter Spritesheet.png-1cc609fed9eac17439409b3351191def.ctex"
+uid="uid://c6xjnhkq7ns7x"
+path="res://.godot/imported/speed.png-ba7c753da9284401accde352a0d17edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png"
-dest_files=["res://.godot/imported/Basic Charakter Spritesheet.png-1cc609fed9eac17439409b3351191def.ctex"]
+source_file="res://scenes/scene_update/assets/speed.png"
+dest_files=["res://.godot/imported/speed.png-ba7c753da9284401accde352a0d17edf.ctex"]
 
 [params]
 
